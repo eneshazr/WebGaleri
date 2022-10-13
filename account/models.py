@@ -6,8 +6,8 @@ class Galeri(models.Model):
     resim = models.ImageField("Resim", upload_to="uploads", null=False)
     aciklama = models.TextField("Açıklama", null=True, blank=True)
     # kategoriSec = [(i, str(i)) for _, i in enumerate({"1":"Yer", "2":"Gök", "3":"Derya"})]
-    kategoriSec = [(str(_), str(i)) for _, i in enumerate({"Yer", "Gök","Derya"})]
-    kategori = models.CharField("Kategori", max_length=25, choices=kategoriSec)
+    # kategoriSec = [(str(_), str(i)) for _, i in enumerate({"Yer", "Gök","Derya"})]
+    kategori = models.CharField("Kategori", max_length=25, choices=[('0', 'Yer'), ('1', 'Gök'), ('2', 'Derya')])
     # print(kategoriSec)
     def __str__(self):
         return self.bolge

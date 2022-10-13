@@ -14,37 +14,20 @@
             <div class="container-fluid js-tm-page-content" data-page-no="1" data-page-type="gallery">
                 <div class="tm-img-gallery-container">
                     <div class="tm-img-gallery gallery-one">
-                    <!-- Gallery One pop up connected with JS code below -->
-                        <div class="grid-item">
-                            <figure class="effect-sadie">
-                                <img src="{% static "img/tm-img-01-tn.jpg" %}" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Yer <span><strong>Rize</strong></span></h2>
-                                    <p class="tm-figure-description">Set true or false in HTML script tag for this page black and white.</p>
-                                    <a href="{% static "img/tm-img-01.jpg" %}">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-sadie">
-                                <img src="{% static "img/tm-img-01-tn.jpg" %}" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Yer <span><strong>Rize</strong></span></h2>
-                                    <p class="tm-figure-description">Set true or false in HTML script tag for this page black and white.</p>
-                                    <a href="{% static "img/tm-img-01.jpg" %}">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-sadie">
-                                <img src="{% static "img/tm-img-01-tn.jpg" %}" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Yer <span><strong>Rize</strong></span></h2>
-                                    <p class="tm-figure-description">Set true or false in HTML script tag for this page black and white.</p>
-                                    <a href="{% static "img/tm-img-01.jpg" %}">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
+
+                        {% for i in yer %}
+                            <div class="grid-item">
+                                <figure class="effect-sadie">
+                                    <img src="{{ i.resim.url }}" alt="Image" class="img-fluid tm-img">
+                                    <figcaption>
+                                        <h2 class="tm-figure-title"><span><strong>{{i.bolge}}</strong></span></h2>
+                                        <p class="tm-figure-description">{{i.aciklama}}</p>
+                                        <a href="{{ i.resim.url }}">View more</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -57,18 +40,20 @@
         <div class="container-fluid js-tm-page-content" data-page-no="2" data-page-type="gallery">
             <div class="tm-img-gallery-container">
                 <div class="tm-img-gallery gallery-two">
-                <!-- Gallery Two pop up connected with JS code below -->
 
-                    <div class="grid-item">
-                        <figure class="effect-sadie">
-                            <img src="{% static "img/tm-img-12-tn.jpg" %}" alt="Image" class="img-fluid tm-img">
-                            <figcaption>
-                                <h2 class="tm-figure-title">Pix <span><strong>One</strong></span></h2>
-                                <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
-                                <a href="{% static "img/tm-img-12.jpg" %}">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+                    {% for i in gok %}
+                        <div class="grid-item">
+                            <figure class="effect-sadie">
+                                <img src="{{i.resim.url}}" alt="Image" class="img-fluid tm-img">
+                                <figcaption>
+                                    <h2 class="tm-figure-title"><span><strong>{{i.bolge}}</strong></span></h2>
+                                    <p class="tm-figure-description">{{i.aciklama}}</p>
+                                    <a href="{{i.resim.url}}">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    {% endfor %}
+
                 </div>                                 
             </div>
         </div>                      
@@ -81,17 +66,20 @@
         <div class="container-fluid js-tm-page-content" data-page-no="3" data-page-type="gallery">
             <div class="tm-img-gallery-container">
                 <div class="tm-img-gallery gallery-three">
-                <!-- Gallery Two pop up connected with JS code below -->
-                     <div class="grid-item">
-                        <figure class="effect-sadie">
-                            <img src="{% static "img/tm-img-07-tn.jpg" %}" alt="Image" class="img-fluid tm-img">
-                            <figcaption>
-                                <h2 class="tm-figure-title">Photo <span><strong>1</strong></span></h2>
-                                <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
-                                <a href="{% static "img/tm-img-07.jpg" %}">View more</a>
-                            </figcaption>
-                        </figure>
-                    </div>
+                
+                    {% for i in derya %}
+                            <div class="grid-item">
+                                <figure class="effect-sadie">
+                                    <img src="{{i.resim.url}}" alt="Image" class="img-fluid tm-img">
+                                    <figcaption>
+                                        <h2 class="tm-figure-title"><span><strong>{{i.bolge}}</strong></span></h2>
+                                        <p class="tm-figure-description">{{i.aciklama}}</p>
+                                        <a href="{{i.resim.url}}">View more</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                    {% endfor %}
+                    
                 </div>
             </div> <!-- .tm-img-gallery-container -->
         </div>
